@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/hrr41-fec-frieza/mooviesdb-photo-carousel
+  - https://github.com/hrr41-fec-frieza/mooviesdb-user-reviews
+  - https://github.com/hrr41-fec-frieza/mooviesdb-more-like-this
+
 
 ## Table of Contents
 
