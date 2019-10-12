@@ -1,12 +1,14 @@
-let sampleData = require('./data.js');
-
+const data = require('./data.js');
 const mongoose = require('mongoose');
-const ObjectID = require('mongodb').ObjectID
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
 mongoose.connect('mongodb://localhost/moovies');
 
 
 const mooviesSchema = mongoose.Schema({
-  id: ObjectId,
   title: String,
   trailer_title: String,
   description: String,
@@ -15,16 +17,13 @@ const mooviesSchema = mongoose.Schema({
   ratings: Number,
   thumbnail_url: String,
   video_url: String,
-})
+});
 
 const Moovie = mongoose.model('Moovie', mooviesSchema);
 
-
-
-const save = function(arr, callback) {
+const seed = function(arr, callback) {
   let data = arr.map(function(item) {
     return new Moovie({
-      id: item.id,
       title: item.title,
       description: item.description,
       running_time: item.running_time,
@@ -33,12 +32,33 @@ const save = function(arr, callback) {
       thumbnail_url: item.thumbnail_url,
       video_url: item.video_url
     })
-  }).forEach(item => item.save((err, success) => {
+  })
+
+  Moovie.deleteMany({}, (err) => {
     if (err) {
       callback(err)
     } else {
-      callback(null, success)
+      Moovie.insertMany(data, (err, docs) => {
+        if (err) {
+          callback(err);
+        } else {
+          callback(null, docs);
+        }
+      })
     }
-  }))
+
+  })
 }
+
+
+
+seed(data.sampleData, (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('Data successfully seeded.')
+  }
+})
+
+module.exports = { mooviesSchema, Moovie, seed }
 

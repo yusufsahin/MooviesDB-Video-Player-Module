@@ -1,6 +1,5 @@
-module.exports.sampleData = [
+const sampleData = [
   {
-    id: new ObjectID(),
     title: 'Cows grazing in a Field',
     description: 'Cows grazing in a greenish brown field.',
     running_time: 7,
@@ -10,7 +9,6 @@ module.exports.sampleData = [
     video_url: "https://gcs-vimeo.akamaized.net/exp=1570845333~acl=%2A%2F1081257914.mp4%2A~hmac=e07c70a8c1f8b10b68d27e27df4c3febd27b29a2eea678dcf66f80ede0abcd9a/vimeo-prod-skyfire-std-us/01/2292/11/286460925/1081257914.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Black and White Cow',
     description: 'A cow hanging out in Switzerland amongst its friends.',
     running_time: 21,
@@ -20,7 +18,6 @@ module.exports.sampleData = [
     video_url: "https://gcs-vimeo.akamaized.net/exp=1570848259~acl=%2A%2F568609493.mp4%2A~hmac=69c76f00a5164cf165ff45928d0b81dbcd7f9bfc54712575e16e4de8470f2944/vimeo-prod-skyfire-std-us/01/69/7/175348540/568609493.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Red Haired Cow',
     description: 'The Beautiful Cow grazing in the pasture.',
     running_time: 7,
@@ -30,7 +27,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-10270_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Cow in the Countryside',
     description: 'A wonderful cow grazing in the country, with the forest in the background.',
     running_time: 23,
@@ -40,7 +36,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-8439_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Two Cows',
     description: 'Two cows playing together in the pasture.',
     running_time: 20,
@@ -50,7 +45,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-1278_medium.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Boi Cow',
     description: 'Reddish Brown cow grazing in pasture.',
     running_time: 10,
@@ -60,7 +54,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-17880_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Green Pasture',
     description: 'A green saga of menu hungry cows.',
     running_time: 16,
@@ -70,7 +63,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-1026_medium.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Cow Grub',
     description: 'Cattle enjoying a beautiful fall day of grazing.',
     running_time: 9,
@@ -80,7 +72,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-17876_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'White Cow (Fang)',
     description: 'An adaptation of the classic White Fang involving cows.',
     running_time: 10,
@@ -90,7 +81,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-17877_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'The Invisible One',
     description: 'Mostly a field with a split second of cow.',
     running_time: 8,
@@ -100,7 +90,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-25876_medium.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Afternoon Delight',
     description: 'Different cows enjoying the heck out of their afternoon.',
     running_time: 7,
@@ -110,7 +99,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-17899_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Blue Sky',
     description: 'A beautiful blue sky. Cows may or may not be here.',
     running_time: 7,
@@ -120,7 +108,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-25735_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Rabbit Cow II',
     description: 'Cows and a bunny, enjoying the countryside.',
     running_time: 18,
@@ -130,7 +117,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-5273_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Forrest Cow',
     description: 'Forrest Gump. But with cows.',
     running_time: 59,
@@ -140,7 +126,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-17121_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'The Dog',
     description: 'A dog hanging out with some cows, and sniffing.',
     running_time: 7,
@@ -150,7 +135,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-17901_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'The Black Cowllion',
     description: 'The black sheep in the cow family.',
     running_time: 33,
@@ -160,7 +144,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-190_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'The Herd',
     description: 'Nurturing happens with cows, too.',
     running_time: 39,
@@ -170,7 +153,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-2359_medium.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Holy Cow',
     description: 'Some sacred cows in India.',
     running_time: 10,
@@ -180,7 +162,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-9626_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Every Rose Has Its Horns',
     description: 'A saga of the red haired cow.',
     running_time: 10,
@@ -190,7 +171,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-10267_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Livestock',
     description: 'A day in the life of livestock.',
     running_time: 26,
@@ -200,7 +180,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-5694_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'The Great Divide',
     description: 'Cows, so close to one another, yet so far.',
     running_time: 11,
@@ -210,7 +189,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-13229_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Browny',
     description: 'A brown cow, chilling with his buddies in the fields',
     running_time: 3,
@@ -220,7 +198,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-6536_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'The Cowfather',
     description: 'Daddy, chewing some food.',
     running_time: 41,
@@ -230,7 +207,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-5646_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'True Love',
     description: 'A bonding adventure in the pasture.',
     running_time: 10,
@@ -240,7 +216,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-27236_medium.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'A Real Mate',
     description: 'A giant cow and some ones behind it, mating.',
     running_time: 12,
@@ -250,7 +225,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-27259_medium.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'The Cow Bunch',
     description: 'A crazy crew of cows!',
     running_time: 16,
@@ -260,7 +234,6 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-23123_large.mp4"
   },
   {
-    id: new ObjectID(),
     title: 'Sunset Cow',
     description: 'A beautiful evening, if you are a cow!',
     running_time: 14,
@@ -270,3 +243,5 @@ module.exports.sampleData = [
     video_url: "https://pixabay.com/videos/download/video-10737_large.mp4"
   }
 ]
+
+module.exports.sampleData = sampleData;
