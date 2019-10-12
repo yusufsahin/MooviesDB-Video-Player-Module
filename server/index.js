@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
   res.send('App is loaded!')
 })
 
-app.get('/data', (req, res) => {
+app.get('/api/videoplayer/data', (req, res) => {
   db.get((err, docs) => {
     if (err) {
       res.sendStatus(404)
@@ -17,7 +17,7 @@ app.get('/data', (req, res) => {
   })
 })
 
-app.get('/data/:id', (req, res) => {
+app.get('/api/videoplayer/data/:id', (req, res) => {
   db.getById(req.params.id, (err, doc) => {
     if (err) {
       res.sendStatus(404);
