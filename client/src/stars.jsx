@@ -13,6 +13,8 @@ class Stars extends React.Component {
       currentRating: ''
     }
     this.changeStars = this.changeStars.bind(this);
+    this.starHoverOn = this.starHoverOn.bind(this);
+    this.starHoverOff = this.starHoverOff.bind(this);
   }
 
   componentDidMount() {
