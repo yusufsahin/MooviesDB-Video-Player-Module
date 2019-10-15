@@ -1,0 +1,42 @@
+.stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 4px;
+  width: 260px;
+  background-color: rgb(72, 74, 72);
+  border: 1px solid rgb(170, 170, 170);
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px;
+  height: 30px;
+  right: 96px;
+}
+
+.star-rating {
+  font-size: 16px;
+  margin: 1px;
+  color: rgb(192, 192, 192);
+}
+
+.star-rating-a:hover {
+  cursor: pointer;
+}
+
+.star-exit {
+  font-size: 16px;
+  margin: 1px;
+  color: rgb(192, 192, 192);
+}
+
+.star-exit-container {
+  border-right: 1px solid rgb(192, 192, 192);
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.star-exit:hover {
+  color: crimson;
+  cursor: pointer;
+}

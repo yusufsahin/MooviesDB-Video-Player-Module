@@ -1,11 +1,14 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const db = require('../database/queries.js');
 const app = express();
-const db = require('../database/queries.js')
 const port = 3000;
 
-app.get('/', (req, res) => {
-  res.send('App is loaded!')
-})
+app.use(express.static(__dirname + '/../client/dist'));
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(bodyParser.json());
 
 app.get('/api/videoplayer/data', (req, res) => {
   db.get((err, docs) => {
