@@ -9,6 +9,7 @@ class Stars extends React.Component {
       selected: false,
       stars: [],
       starAmount: 10,
+      starHover: false,
       currentRating: ''
     }
     this.changeStars = this.changeStars.bind(this);
@@ -34,6 +35,18 @@ class Stars extends React.Component {
     })
   }
 
+  starHoverOn() {
+    this.setState({
+      starHover: true
+    })
+  }
+
+  starHoverOff() {
+    this.setState({
+      starHover: false
+    })
+  }
+
   render() {
     return (
       <div onMouseLeave={() => {this.props.toggleStars()}} className="stars">
@@ -41,10 +54,21 @@ class Stars extends React.Component {
         <div className="star-exit-container">
           <i onClick={() => {this.props.toggleStars()}} className="star-exit fas fa-times-circle"></i>
         </div>
-          {this.state.stars.map(item => <Star style={item <= this.state.currentRating ? "selected" : ""} changeStars={this.changeStars} key={item} index={item} />)}
+          {this.state.stars.map(item => <Star starHoverOn={this.starHoverOn} starHoverOff={this.starHoverOff} style={item <= this.state.currentRating ? "selected" : ""} changeStars={this.changeStars} key={item} index={item} />)}
+          {this.state.starHover && (
+            <div className="display-rating">
+              <i className="fas fa-star"></i>
+              <span className="current-rating-display">{this.state.currentRating}</span>
+            </div>)
+          }
+
       </div>
     )
   }
+
+
 }
+
+
 
 export default Stars;
