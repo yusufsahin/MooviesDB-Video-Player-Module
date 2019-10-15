@@ -61,6 +61,8 @@ class Stars extends React.Component {
             <div className="display-rating">
               <i className="fas fa-star"></i>
               <span className="current-rating-display">{this.state.currentRating}</span>
+              <span className="small you">You</span>
+
             </div>)
           }
 

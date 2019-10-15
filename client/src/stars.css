@@ -47,4 +47,30 @@
   width: 96px;
   right: -97px;
   background-color: rgb(51, 51, 51);
+  color: white;
+}
+
+.display-rating i {
+  position: relative;
+  font-size: 27px;
+  left: 10px;
+  top: 11px;
+  color: rgb(100, 141, 237);
+}
+
+.current-rating-display {
+  position: absolute;
+  left: 48px;
+  top: 5px;
+  font: normal 24px Arial;
+  color: white;
+  max-width: 20px;
+}
+
+.you {
+  display: inline-block;
+  position: absolute;
+  top: 32px;
+  left: 50px;
+  color: rgb(170, 170, 170);
 }
