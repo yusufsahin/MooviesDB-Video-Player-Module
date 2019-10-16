@@ -13,7 +13,7 @@ const mooviesSchema = mongoose.Schema({
   trailer_title: String,
   description: String,
   running_time: Number,
-  date: Date,
+  date: String,
   ratings: Number,
   thumbnail_url: String,
   video_url: String,
