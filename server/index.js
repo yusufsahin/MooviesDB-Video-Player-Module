@@ -13,9 +13,9 @@ app.use(bodyParser.json());
 app.get('/api/videoplayer/data', (req, res) => {
   db.get((err, docs) => {
     if (err) {
-      res.sendStatus(404)
+      res.sendStatus(404);
     } else {
-      res.send(docs);
+      res.status(200).send(docs);
     }
   })
 })
@@ -30,5 +30,15 @@ app.get('/api/videoplayer/data/:id', (req, res) => {
   })
 })
 
+// app.listen(port, () => {console.log(`listening on port ${port}`)})
 
-app.listen(port, () => {console.log(`listening on port ${port}`)})
+let server;
+const start = () => {server = app.listen(3000, () => {console.log(`listening on port ${port}`)})}
+const close = server ? server.close : () => {};
+
+
+module.exports = {
+  app,
+  start,
+  close
+};
