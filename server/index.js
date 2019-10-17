@@ -30,7 +30,7 @@ app.get('/api/videoplayer/data/:id', (req, res) => {
   })
 })
 
-app.put('/api/videoplayer/data/:id//:rating', (req, res) => {
+app.put('/api/videoplayer/data/:id/:rating', (req, res) => {
   db.rateMoovie(req.params.id, req.ip, req.params.rating, (err, doc) => {
     if (err) {
       res.status(400).send(err);
