@@ -47,7 +47,7 @@ class App extends Component {
               <div className="ratings-container-left">
                 <i className="fas fa-star"></i>
                 <div className="rcl2">
-                  <h2 className="average white">8.9<span className="outOf grey small">/10</span></h2>
+                  <h2 className="average white">{this.state.selected.averageRating}<span className="outOf grey small">/10</span></h2>
                   <p className="totalRatings small grey">{this.state.selected.ratings}</p>
                 </div>
               </div>
