@@ -6,9 +6,9 @@ class Stars extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedMovie: props.moovie,
       selected: false,
       stars: [],
-      starAmount: 10,
       starHover: false,
       currentRating: ''
     }

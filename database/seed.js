@@ -16,6 +16,7 @@ const mooviesSchema = mongoose.Schema({
   date: String,
   ratings: Number,
   averageRating: Number,
+  yourRating: Schema.Types.Mixed,
   thumbnail_url: String,
   video_url: String,
 });

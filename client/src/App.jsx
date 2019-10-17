@@ -55,7 +55,7 @@ class App extends Component {
                 <i className="far fa-star"></i>
                 <p className="rateThis white small">Rate This</p>
               </div>
-              {this.state.showStars && <Stars toggleStars={this.toggleStars}/>}
+              {this.state.showStars && <Stars selectedMoovie={this.state.selected} toggleStars={this.toggleStars}/>}
             </div>
           </div>
           <div className="header-bottom-line">
