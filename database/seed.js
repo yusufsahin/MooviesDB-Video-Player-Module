@@ -29,6 +29,7 @@ const seed = function(arr, callback) {
       running_time: item.running_time,
       date: item.date,
       ratings: item.ratings,
+      averageRating: item.averageRating,
       thumbnail_url: item.thumbnail_url,
       video_url: item.video_url
     })
