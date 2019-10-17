@@ -25,7 +25,7 @@ class App extends Component {
       .then(response => response.json())
       .then(jsonResponse => this.setState({
         videos: jsonResponse,
-        selected: jsonResponse[12]
+        selected: jsonResponse[3]
       }));
   }
 

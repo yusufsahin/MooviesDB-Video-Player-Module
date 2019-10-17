@@ -15,6 +15,7 @@ const mooviesSchema = mongoose.Schema({
   running_time: Number,
   date: String,
   ratings: Number,
+  averageRating: Number,
   thumbnail_url: String,
   video_url: String,
 });
