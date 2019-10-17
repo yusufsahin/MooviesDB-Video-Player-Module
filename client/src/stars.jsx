@@ -6,7 +6,7 @@ class Stars extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedMovie: props.moovie,
+      selectedMoovie: this.props.moovie,
       selected: false,
       stars: [],
       starHover: false,
@@ -15,6 +15,7 @@ class Stars extends React.Component {
     this.changeStars = this.changeStars.bind(this);
     this.starHoverOn = this.starHoverOn.bind(this);
     this.starHoverOff = this.starHoverOff.bind(this);
+    this.addRating = this.addRating.bind(this);
   }
 
   componentDidMount() {
@@ -47,6 +48,16 @@ class Stars extends React.Component {
     this.setState({
       starHover: false
     })
+  }
+
+  addRating() {
+    const url = `http://localhost:3000/api/videoplayer/${this.state.selectedMoovie._id}/${this.state.currentRating}`;
+
+    fetch(url, {
+      method: 'PUT',
+    })
+    .then(response => response.json())
+    .then(jsonResponse => console.log('Successfully updated rating!'))
   }
 
   render() {
