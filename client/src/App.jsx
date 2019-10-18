@@ -12,6 +12,7 @@ class App extends Component {
       showLarge: false
     }
     this.toggleStars = this.toggleStars.bind(this);
+    this.handleRating = this.handleRating.bind(this);
   }
 
   toggleStars() {
@@ -25,8 +26,15 @@ class App extends Component {
       .then(response => response.json())
       .then(jsonResponse => this.setState({
         videos: jsonResponse,
-        selected: jsonResponse[3]
+        selected: jsonResponse[2]
       }));
+  }
+
+  handleRating(newState) {
+    this.setState({
+      videos: newState,
+      selected: newState[2]
+    })
   }
 
   render() {
@@ -55,7 +63,7 @@ class App extends Component {
                 <i className="far fa-star"></i>
                 <p className="rateThis white small">Rate This</p>
               </div>
-              {this.state.showStars && <Stars selectedMoovie={this.state.selected} toggleStars={this.toggleStars}/>}
+              {this.state.showStars && <Stars handleRating={this.handleRating} moovie={this.state.selected} toggleStars={this.toggleStars}/>}
             </div>
           </div>
           <div className="header-bottom-line">

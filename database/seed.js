@@ -16,10 +16,10 @@ const mooviesSchema = mongoose.Schema({
   date: String,
   ratings: Number,
   averageRating: Number,
-  yourRating: Schema.Types.Mixed,
+  yourRating: Array,
   thumbnail_url: String,
   video_url: String,
-});
+}, {minimize: false});
 
 const Moovie = mongoose.model('Moovie', mooviesSchema);
 

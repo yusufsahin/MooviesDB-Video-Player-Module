@@ -51,13 +51,11 @@ class Stars extends React.Component {
   }
 
   addRating() {
-    const url = `http://localhost:3000/api/videoplayer/${this.state.selectedMoovie._id}/${this.state.currentRating}`;
+    const url = `http://localhost:3000/api/videoplayer/data/${this.state.selectedMoovie._id}/${this.state.currentRating}`;
 
-    fetch(url, {
-      method: 'PUT',
-    })
+    fetch(url)
     .then(response => response.json())
-    .then(jsonResponse => console.log('Successfully updated rating!'))
+    .then(jsonResponse => this.props.handleRating(jsonResponse))
   }
 
   render() {
@@ -67,7 +65,7 @@ class Stars extends React.Component {
         <div className="star-exit-container">
           <i onClick={() => {this.props.toggleStars()}} className="star-exit fas fa-times-circle"></i>
         </div>
-          {this.state.stars.map(item => <Star starHoverOn={this.starHoverOn} starHoverOff={this.starHoverOff} style={item <= this.state.currentRating ? "selected" : ""} changeStars={this.changeStars} key={item} index={item} />)}
+          {this.state.stars.map(item => <Star addRating={this.addRating} starHoverOn={this.starHoverOn} starHoverOff={this.starHoverOff} style={item <= this.state.currentRating ? "selected" : ""} changeStars={this.changeStars} key={item} index={item} />)}
           {this.state.starHover && (
             <div className="display-rating">
               <i className="fas fa-star"></i>

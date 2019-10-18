@@ -4,6 +4,7 @@ const db = require('../database/queries.js');
 const app = express();
 const port = 3000;
 
+app.set('trust proxy')
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,7 +31,8 @@ app.get('/api/videoplayer/data/:id', (req, res) => {
   })
 })
 
-app.put('/api/videoplayer/data/:id/:rating', (req, res) => {
+app.get('/api/videoplayer/data/:id/:rating', (req, res) => {
+  console.log(req.params.id, req.params.rating, req.ip)
   db.rateMoovie(req.params.id, req.ip, req.params.rating, (err, doc) => {
     if (err) {
       res.status(400).send(err);

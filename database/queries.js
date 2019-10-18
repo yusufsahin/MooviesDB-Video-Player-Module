@@ -8,7 +8,7 @@ const get = (callback) =>  {
     } else {
       callback(null, docs);
     }
-  })
+  });
 };
 
 const getById = (id, callback) => {
@@ -18,33 +18,36 @@ const getById = (id, callback) => {
     } else {
       callback(null, doc);
     }
-  })
+  });
 };
 
 const rateMoovie = (selected, ip, rating, callback) => {
-  moovies.Moovie.findOne({_id: selected.id}, (err, doc) => {
+  moovies.Moovie.findOne({ _id: selected }, (err, doc) => {
     if (err) {
       callback(err);
     } else {
-        if (doc.ip) {
-          moovies.Moovie.findOneAndUpdate({_id: selected.id}, {yourRating: rating}, {new: true}, (err, doc) => {
-            if (err) {
-              callback(err);
-            } else {
-              callback(null, doc)
-            }
-          })
-        } else {
-          moovies.Moovie.findOneAndUpdate({_id: selected.id}, {yourRating: rating, averageRating: ((doc.averageRating * doc.ratings + rating )/(doc.ratings + 1)) ratings: doc.ratings++}, {new: true}, (err, doc) => {
-            if (err) {
-              callback(err);
-            } else {
-              callback(null, doc);
-            }
-          })
-        }
+      console.log(doc);
+      if (doc.yourRating.some(item => item[0] === ip)) {
+        console.log("you already rated this");
+        moovies.Moovie.findOneAndUpdate({ _id: selected }, { $push: { yourRating: [[ip, rating]] } }, { new: true }, (err, doc) => {
+          if (err) {
+            callback(err);
+          } else {
+            callback(null, doc);
+          }
+        })
+      } else {
+        console.log('will have id?')
+        moovies.Moovie.findOneAndUpdate({ _id: selected }, { $push: { yourRating: [[ip, rating]] }, $set: { averageRating: Math.round(((Number(doc.averageRating) * Number(doc.ratings) + Number(rating)) / (Number(doc.ratings) + 1)) * 10) / 10, ratings: Number(doc.ratings) + 1 } }, { new: true }, (err, doc) => {
+          if (err) {
+            callback(err);
+          } else {
+            callback(null, doc);
+          }
+        });
+      }
     }
-  })
-}
+  });
+};
 
 module.exports = { get, getById, rateMoovie };
