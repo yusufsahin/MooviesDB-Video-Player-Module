@@ -7,11 +7,13 @@
     "node": ">=6.13.0"
   },
   "scripts": {
+    "test": "jest",
     "seed": "node ./database/seed.js",
     "start": "node ./server/index.js",
     "build": "webpack --mode development"
   },
   "dependencies": {
+    "babel-jest": "^24.9.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongodb": "^3.3.2",
@@ -26,10 +28,12 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "jest": "^24.9.0",
     "style-loader": "^0.23.0",
+    "supertest": "^4.0.2",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.8"
+    "webpack-dev-server": "^3.8.2"
   },
   "version": "1.0.0",
   "main": "./server/index.js",
