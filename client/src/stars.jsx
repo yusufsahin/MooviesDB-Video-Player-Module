@@ -6,15 +6,17 @@ class Stars extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedMoovie: this.props.moovie,
       selected: false,
       stars: [],
-      starAmount: 10,
       starHover: false,
-      currentRating: ''
+      currentRating: '',
+      rated: false,
     }
     this.changeStars = this.changeStars.bind(this);
     this.starHoverOn = this.starHoverOn.bind(this);
     this.starHoverOff = this.starHoverOff.bind(this);
+    this.addRating = this.addRating.bind(this);
   }
 
   componentDidMount() {
@@ -49,21 +51,30 @@ class Stars extends React.Component {
     })
   }
 
+  addRating() {
+    const url = `http://localhost:3000/api/videoplayer/data/${this.state.selectedMoovie._id}/${this.state.currentRating}`;
+
+    fetch(url)
+    .then(response => response.json())
+    .then((jsonResponse) => {
+      this.setState({rated: this.state.currentRating})
+      this.props.handleRating(jsonResponse, this.state.currentRating)})
+  }
+
   render() {
     return (
       <div onMouseLeave={() => {this.props.toggleStars()}} className="stars">
         <div className="star-exit-container">
           <i onClick={() => {this.props.toggleStars()}} className="star-exit fas fa-times-circle"></i>
         </div>
-          {this.state.stars.map(item => <Star starHoverOn={this.starHoverOn} starHoverOff={this.starHoverOff} style={item <= this.state.currentRating ? "selected" : ""} changeStars={this.changeStars} key={item} index={item} />)}
-          {this.state.starHover && (
+          {this.state.stars.map(item => <Star addRating={this.addRating} starHoverOn={this.starHoverOn} starHoverOff={this.starHoverOff} style={item <= this.state.currentRating ? "selected" : ""} changeStars={this.changeStars} key={item} index={item} />)}
+          {(this.state.rated || this.state.starHover) && (
             <div className="display-rating">
               <i className="fas fa-star"></i>
-              <span className="current-rating-display">{this.state.currentRating}</span>
+              <span className="current-rating-display">{this.state.rated || this.state.currentRating}</span>
               <span className="small you">You</span>
             </div>)
           }
-
       </div>
     )
   }

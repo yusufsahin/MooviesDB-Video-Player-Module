@@ -15,9 +15,11 @@ const mooviesSchema = mongoose.Schema({
   running_time: Number,
   date: String,
   ratings: Number,
+  averageRating: Number,
+  yourRating: Array,
   thumbnail_url: String,
   video_url: String,
-});
+}, {minimize: false});
 
 const Moovie = mongoose.model('Moovie', mooviesSchema);
 
@@ -29,6 +31,7 @@ const seed = function(arr, callback) {
       running_time: item.running_time,
       date: item.date,
       ratings: item.ratings,
+      averageRating: item.averageRating,
       thumbnail_url: item.thumbnail_url,
       video_url: item.video_url
     })
