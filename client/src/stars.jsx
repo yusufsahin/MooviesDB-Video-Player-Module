@@ -52,7 +52,6 @@ class Stars extends React.Component {
   render() {
     return (
       <div onMouseLeave={() => {this.props.toggleStars()}} className="stars">
-        {console.log(this.state.currentRating)}
         <div className="star-exit-container">
           <i onClick={() => {this.props.toggleStars()}} className="star-exit fas fa-times-circle"></i>
         </div>
@@ -62,7 +61,6 @@ class Stars extends React.Component {
               <i className="fas fa-star"></i>
               <span className="current-rating-display">{this.state.currentRating}</span>
               <span className="small you">You</span>
-
             </div>)
           }
 
