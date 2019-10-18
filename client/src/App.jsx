@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Stars from "./stars.jsx"
+import VideoPlayerLarge from "./VideoPlayerLarge.jsx"
 
 class App extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class App extends Component {
     }
     this.toggleStars = this.toggleStars.bind(this);
     this.handleRating = this.handleRating.bind(this);
+    this.toggleLargeVideo = this.toggleLargeVideo.bind(this);
   }
 
   toggleStars() {
@@ -39,9 +41,18 @@ class App extends Component {
     })
   }
 
+  toggleLargeVideo() {
+    this.setState({
+      showLarge: !this.state.showLarge
+    })
+  }
+
   render() {
     return (
       <div className="App">
+        {this.state.showLarge && (
+          <VideoPlayerLarge toggleLargeVideo={this.toggleLargeVideo} selected={this.state.selected} />
+        )}
         <div className="nav">
           <div className="logo">
             <h1>mooviesDB</h1>
@@ -83,7 +94,7 @@ class App extends Component {
           <video key={this.state.selected.video_url}>
             <source src={this.state.selected.video_url} type="video/mp4"/>
           </video>
-          <i className=" playButton far fa-play-circle"></i>
+          <i onClick={() => {this.toggleLargeVideo()}}className=" playButton far fa-play-circle"></i>
           <div className="video-footer">
             <div>
               <span className="video-footer-running-time">0:{Number(this.state.selected.running_time) < 10 ? '0' + this.state.selected.running_time : this.state.selected.running_time}</span>
