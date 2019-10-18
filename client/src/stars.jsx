@@ -10,7 +10,8 @@ class Stars extends React.Component {
       selected: false,
       stars: [],
       starHover: false,
-      currentRating: ''
+      currentRating: '',
+      rated: false,
     }
     this.changeStars = this.changeStars.bind(this);
     this.starHoverOn = this.starHoverOn.bind(this);
@@ -55,26 +56,27 @@ class Stars extends React.Component {
 
     fetch(url)
     .then(response => response.json())
-    .then(jsonResponse => this.props.handleRating(jsonResponse))
+    .then((jsonResponse) => {
+      this.setState({rated: this.state.currentRating})
+      this.props.handleRating(jsonResponse, this.state.currentRating)})
   }
 
   render() {
     return (
       <div onMouseLeave={() => {this.props.toggleStars()}} className="stars">
-        {console.log(this.state.currentRating)}
+        {console.log(this.state.rated)}
         <div className="star-exit-container">
           <i onClick={() => {this.props.toggleStars()}} className="star-exit fas fa-times-circle"></i>
         </div>
           {this.state.stars.map(item => <Star addRating={this.addRating} starHoverOn={this.starHoverOn} starHoverOff={this.starHoverOff} style={item <= this.state.currentRating ? "selected" : ""} changeStars={this.changeStars} key={item} index={item} />)}
-          {this.state.starHover && (
+          {(this.state.rated || this.state.starHover) && (
             <div className="display-rating">
               <i className="fas fa-star"></i>
-              <span className="current-rating-display">{this.state.currentRating}</span>
+              <span className="current-rating-display">{this.state.rated || this.state.currentRating}</span>
               <span className="small you">You</span>
 
             </div>)
           }
-
       </div>
     )
   }

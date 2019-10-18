@@ -1,6 +1,6 @@
 import React from 'react';
 import "./stars.css";
-//70,114,214
+
 const Star = (props) => (
   <a className="star-rating-a" onClick={() => {props.addRating()}} onMouseEnter={() => {
       props.starHoverOn()

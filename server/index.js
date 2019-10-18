@@ -32,7 +32,6 @@ app.get('/api/videoplayer/data/:id', (req, res) => {
 })
 
 app.get('/api/videoplayer/data/:id/:rating', (req, res) => {
-  console.log(req.params.id, req.params.rating, req.ip)
   db.rateMoovie(req.params.id, req.ip, req.params.rating, (err, doc) => {
     if (err) {
       res.status(400).send(err);
@@ -47,32 +46,6 @@ app.get('/api/videoplayer/data/:id/:rating', (req, res) => {
     }
   })
 })
-
-// const rateMoovie = (selected, ip, rating, callback) => {
-//   moovies.Moovie.findOne({_id: selected.id}, (err, doc) => {
-//     if (err) {
-//       callback(err);
-//     } else {
-//         if (doc.ip) {
-//           moovies.Moovie.findOneAndUpdate({_id: selected.id}, {yourRating: rating}, {new: true}, (err, doc) => {
-//             if (err) {
-//               callback(err);
-//             } else {
-//               callback(null, doc)
-//             }
-//           })
-//         } else {
-//           moovies.Moovie.findOneAndUpdate({_id: selected.id}, {yourRating: rating, averageRating: ((doc.averageRating * doc.ratings + rating )/(doc.ratings + 1)) ratings: doc.ratings++}, {new: true}, (err, doc) => {
-//             if (err) {
-//               callback(err);
-//             } else {
-//               callback(null, doc);
-//             }
-//           })
-//         }
-//     }
-//   })
-// }
 
 
 app.listen(port, () => {console.log(`listening on port ${port}`)})

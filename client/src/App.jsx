@@ -9,7 +9,8 @@ class App extends Component {
       videos: [],
       selected: '',
       showStars: false,
-      showLarge: false
+      showLarge: false,
+      rated: false
     }
     this.toggleStars = this.toggleStars.bind(this);
     this.handleRating = this.handleRating.bind(this);
@@ -30,10 +31,11 @@ class App extends Component {
       }));
   }
 
-  handleRating(newState) {
+  handleRating(newState, rating) {
     this.setState({
       videos: newState,
-      selected: newState[2]
+      selected: newState[2],
+      rated: rating
     })
   }
 
@@ -59,10 +61,17 @@ class App extends Component {
                   <p className="totalRatings small grey">{this.state.selected.ratings}</p>
                 </div>
               </div>
-              <div onClick={this.toggleStars} className="ratings-container-right">
-                <i className="far fa-star"></i>
-                <p className="rateThis white small">Rate This</p>
-              </div>
+              {this.state.rated ? (
+                <div onClick={this.toggleStars} className="display-rating-rated">
+                  <i className="fas fa-star"></i>
+                  <span className="current-rating-display">{this.state.rated || this.state.currentRating}</span>
+                  <span className="small you">You</span>
+                </div>) : (
+                <div onClick={this.toggleStars} className="ratings-container-right">
+                  <i className="far fa-star"></i>
+                  <p className="rateThis white small">Rate This</p>
+                </div>
+              )}
               {this.state.showStars && <Stars handleRating={this.handleRating} moovie={this.state.selected} toggleStars={this.toggleStars}/>}
             </div>
           </div>

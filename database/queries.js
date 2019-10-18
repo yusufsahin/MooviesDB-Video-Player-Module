@@ -26,18 +26,10 @@ const rateMoovie = (selected, ip, rating, callback) => {
     if (err) {
       callback(err);
     } else {
-      console.log(doc);
       if (doc.yourRating.some(item => item[0] === ip)) {
         console.log("you already rated this");
-        moovies.Moovie.findOneAndUpdate({ _id: selected }, { $push: { yourRating: [[ip, rating]] } }, { new: true }, (err, doc) => {
-          if (err) {
-            callback(err);
-          } else {
-            callback(null, doc);
-          }
-        })
+        callback(null, "you already rated this")
       } else {
-        console.log('will have id?')
         moovies.Moovie.findOneAndUpdate({ _id: selected }, { $push: { yourRating: [[ip, rating]] }, $set: { averageRating: Math.round(((Number(doc.averageRating) * Number(doc.ratings) + Number(rating)) / (Number(doc.ratings) + 1)) * 10) / 10, ratings: Number(doc.ratings) + 1 } }, { new: true }, (err, doc) => {
           if (err) {
             callback(err);
