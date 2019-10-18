@@ -40,7 +40,7 @@ html, body {
 
 .video-list {
   position: relative;
-  width: 275px;
+  width: 325px;
   background-color: rgb(29, 29, 29);
   height: 100%;
 }
@@ -72,7 +72,7 @@ html, body {
   position: fixed;
   top: 0;
   padding: 10px 15px;
-  width: 275px;
+  width: 325px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,4 +91,35 @@ html, body {
 
 .small {
   font-size: 11px;
+}
+
+.now-playing {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 50px;
+  color: white;
+  font-size: 14px;
+  padding: 10px 15px;
+  border-bottom: 1px solid grey;
+}
+
+.now-playing img {
+  width: 90px;
+  height: 125px;
+}
+
+.now-playing .title {
+  padding-left: 0;
+}
+
+.now-playing .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 15px;
+}
+
+.blue {
+  color: rgb(22, 159, 197);
+  max-width: 100px;
 }

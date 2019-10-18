@@ -32,13 +32,22 @@ class VideoPlayerLarge extends React.Component {
       </div>
       {this.state.showSidebar && (
         <div className="video-list">
-        <div className="related-videos">
-          <div>
-            <h2>Related Videos</h2>
-            <p className="small">1 of 20</p>
+          <div className="related-videos">
+            <div>
+              <h2>Related Videos</h2>
+              <p className="small">1 of 20</p>
+            </div>
+          <i onClick={() => {this.toggleSideBar()}} className="toggle-sidebar far fa-arrow-alt-circle-right"></i>
           </div>
-        <i onClick={() => {this.toggleSideBar()}} className="toggle-sidebar far fa-arrow-alt-circle-right"></i>
-        </div>
+          <div className="now-playing">
+            <div>
+              <img src={this.props.selected.thumbnail_url}></img>
+            </div>
+            <div className="info">
+              <p className="title">{this.props.selected.title} ({this.props.selected.date})</p>
+              <p className="blue">GET TICKETS <span className="blue small">Now Playing</span></p>
+            </div>
+          </div>
         </div>
       )}
     </div>
