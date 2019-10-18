@@ -262,7 +262,7 @@ video {
   border-right: 1px solid white;
 }
 
-.display-rating-rated {
+/* .display-rating-rated {
   position: absolute;
   top: 0px;
   height: 50px;
@@ -286,5 +286,5 @@ video {
   top: 32px;
   left: 50px;
   color: rgb(170, 170, 170);
-}
+} */
 
