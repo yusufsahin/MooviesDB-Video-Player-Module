@@ -29,14 +29,14 @@ class App extends Component {
       .then(response => response.json())
       .then(jsonResponse => this.setState({
         videos: jsonResponse,
-        selected: jsonResponse[2]
+        selected: jsonResponse[5]
       }));
   }
 
   handleRating(newState, rating) {
     this.setState({
       videos: newState,
-      selected: newState[2],
+      selected: newState[5],
       rated: rating
     })
   }

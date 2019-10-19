@@ -123,3 +123,22 @@ html, body {
   color: rgb(22, 159, 197);
   max-width: 100px;
 }
+
+.play-pause {
+  color: rgb(192, 192, 192);
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+}
+
+.play-pause p {
+  display: inline-block;
+  margin-left: 15px;
+  font-size: 12px;
+  color: white;
+}
+
+.play-pause i:hover {
+  cursor: pointer;
+  color: white;
+}

@@ -5,9 +5,13 @@ class VideoPlayerLarge extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showSidebar: true
+      showSidebar: true,
+      playing: true,
+      paused: false,
+      currentTime: 0
     }
     this.toggleSideBar = this.toggleSideBar.bind(this);
+    this.playPause = this.playPause.bind(this);
   }
 
   toggleSideBar() {
@@ -16,19 +20,58 @@ class VideoPlayerLarge extends React.Component {
     })
   }
 
+  playPause() {
+    const video = document.getElementById('videoToPlay');
+    if (this.state.playing) {
+      video.pause();
+      this.setState({
+        playing: false,
+        paused: true
+      })
+    } else if (this.state.paused) {
+      video.play();
+      this.setState({
+        playing: true,
+        paused: false
+      })
+    }
+  }
+
+  componentDidMount() {
+    const video = document.getElementById('videoToPlay');
+    video.addEventListener('ended', () => {
+      this.setState({
+        playing: false,
+        paused: true
+      })
+    })
+    video.addEventListener('timeupdate', () => {
+      this.setState({
+        currentTime: video.currentTime
+      })
+    })
+  }
+
 
   render() {
     return (
       <div className="videoPlayerLarge">
-      {console.log(this.props.selected.video_url)}
       <div className="large-player">
         <i onClick={() => {this.props.toggleLargeVideo()}} className="exit-large-player fas fa-times"></i>
-        <video autoPlay muted id="videoToPlay" key={this.props.selected._id}>
+        <video autoPlay id="videoToPlay" key={this.props.selected._id}>
           <source src={this.props.selected.video_url} type="video/mp4"></source>
         </video>
         {!this.state.showSidebar && (
           <i onClick={() => {this.toggleSideBar()}} class="show-sidebar fas fa-info-circle"></i>
         )}
+        <div onClick={this.playPause} className="play-pause">
+          {this.state.playing ? (
+            <i className="fas fa-pause"></i>
+          ) : (
+            <i className="fas fa-play"></i>
+          )}
+          <p>00:{Math.round(this.state.currentTime) < 10 ? '0' + Math.round(this.state.currentTime) : Math.round(this.state.currentTime)}/ 00:{this.props.selected.running_time < 10 ? '0' + this.props.selected.running_time : this.props.selected.running_time }</p>
+        </div>
       </div>
       {this.state.showSidebar && (
         <div className="video-list">
