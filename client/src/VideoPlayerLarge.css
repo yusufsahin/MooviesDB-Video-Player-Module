@@ -4,6 +4,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-weight: normal;
+  font-family: Verdana, Arial, sans-serif;
   /* position: absolute; */
 }
 
@@ -42,7 +43,8 @@ html, body {
   position: relative;
   width: 325px;
   background-color: rgb(29, 29, 29);
-  height: 100%;
+  height: 100vh;
+  overflow: scroll;
 }
 
 .toggle-sidebar {
@@ -76,8 +78,9 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid rgb(71,71,71);
   color: white;
+  background-color: rgb(29, 29, 29);
 }
 
 .related-videos h2 {
@@ -100,7 +103,7 @@ html, body {
   color: white;
   font-size: 14px;
   padding: 10px 15px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid rgb(71,71,71);
 }
 
 .now-playing img {
@@ -141,4 +144,20 @@ html, body {
 .play-pause i:hover {
   cursor: pointer;
   color: white;
+}
+
+.description-box {
+  color: white;
+  padding: 10px 15px;
+  border-bottom: 1px solid rgb(71,71,71);
+}
+
+.description-box p {
+  margin: 0;
+  padding: 2px 0px;
+  font-size: 14px;
+}
+
+.description-box .description {
+  color: rgb(139, 139, 139);
 }

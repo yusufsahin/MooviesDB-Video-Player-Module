@@ -51,7 +51,7 @@ class App extends Component {
     return (
       <div className="App">
         {this.state.showLarge && (
-          <VideoPlayerLarge toggleLargeVideo={this.toggleLargeVideo} selected={this.state.selected} />
+          <VideoPlayerLarge toggleLargeVideo={this.toggleLargeVideo} selected={this.state.selected} videos={this.state.videos} />
         )}
         <div className="nav">
           <div className="logo">
