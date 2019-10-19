@@ -1,8 +1,9 @@
 import React from 'react';
-import "./Video.css";
+import "./css/Video.css";
 
 const Video = (props) => (
-  <div className="video-list-item">
+  <div onClick={() => {props.changeVideo(props.index)}} style={props.selected ? {backgroundColor: 'rgb(71, 71, 71)'} : {backgroundColor: 'rgb(29, 29, 29)'}} className="video-list-item">
+    {console.log(props.selected)}
     <div className="video-list-image">
       <img src={props.videoInfo.thumbnail_url} />
     </div>

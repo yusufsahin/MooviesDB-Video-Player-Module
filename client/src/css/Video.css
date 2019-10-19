@@ -10,6 +10,10 @@
   padding: 10px 15px;
 }
 
+.video-list-item:hover {
+  cursor: pointer;
+}
+
 .video-list-item-text {
   padding-left: 15px;
 }

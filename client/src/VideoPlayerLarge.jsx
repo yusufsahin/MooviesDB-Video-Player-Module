@@ -1,5 +1,5 @@
 import React from 'react';
-import "./VideoPlayerLarge.css";
+import "./css/VideoPlayerLarge.css";
 import Video from "./Video.jsx";
 
 class VideoPlayerLarge extends React.Component {
@@ -55,11 +55,12 @@ class VideoPlayerLarge extends React.Component {
 
 
   render() {
+
     return (
       <div className="videoPlayerLarge">
       <div className="large-player">
         <i onClick={() => {this.props.toggleLargeVideo()}} className="exit-large-player fas fa-times"></i>
-        <video autoPlay id="videoToPlay" key={this.props.selected._id}>
+        <video autoPlay id="videoToPlay" key={this.props.selectedIdx}>
           <source src={this.props.selected.video_url} type="video/mp4"></source>
         </video>
         {!this.state.showSidebar && (
@@ -96,7 +97,8 @@ class VideoPlayerLarge extends React.Component {
             <p>{this.props.selected.title} (00:{this.props.selected.running_time < 10 ? '0' + this.props.selected.running_time :  this.props.selected.running_time})</p>
             <p className="description">{this.props.selected.description}</p>
           </div>
-          {this.props.videos.map(video => <Video key={video._id} videoInfo={video} selected={this.props.selected._id === video._id} />)}
+      {this.props.videos.map((video, idx) => {
+        return <Video index={idx} changeVideo={this.props.changeVideo} key={video._id} videoInfo={video} selected={idx === this.props.selectedIdx} />})}
         </div>
       )}
     </div>

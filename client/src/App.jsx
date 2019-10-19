@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./css/App.css";
 import Stars from "./stars.jsx"
 import VideoPlayerLarge from "./VideoPlayerLarge.jsx"
 
@@ -11,11 +11,13 @@ class App extends Component {
       selected: '',
       showStars: false,
       showLarge: false,
-      rated: false
+      rated: false,
+      selectedIdx: ''
     }
     this.toggleStars = this.toggleStars.bind(this);
     this.handleRating = this.handleRating.bind(this);
     this.toggleLargeVideo = this.toggleLargeVideo.bind(this);
+    this.changeVideo = this.changeVideo.bind(this);
   }
 
   toggleStars() {
@@ -29,14 +31,15 @@ class App extends Component {
       .then(response => response.json())
       .then(jsonResponse => this.setState({
         videos: jsonResponse,
-        selected: jsonResponse[5]
+        selected: jsonResponse[0],
+        selectedIdx: 0
       }));
   }
 
   handleRating(newState, rating) {
     this.setState({
       videos: newState,
-      selected: newState[5],
+      selected: this.state.selected,
       rated: rating
     })
   }
@@ -47,11 +50,18 @@ class App extends Component {
     })
   }
 
+  changeVideo(idx) {
+    this.setState({
+      selected: this.state.videos[idx],
+      selectedIdx: idx
+    })
+  }
+
   render() {
     return (
       <div className="App">
         {this.state.showLarge && (
-          <VideoPlayerLarge toggleLargeVideo={this.toggleLargeVideo} selected={this.state.selected} videos={this.state.videos} />
+          <VideoPlayerLarge selectedIdx={this.state.selectedIdx} changeVideo={this.changeVideo} toggleLargeVideo={this.toggleLargeVideo} selected={this.state.selected} videos={this.state.videos} />
         )}
         <div className="nav">
           <div className="logo">
