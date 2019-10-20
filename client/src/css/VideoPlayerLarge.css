@@ -31,6 +31,10 @@ html, body {
   width: 100%;
 }
 
+.large-player video:hover {
+  cursor: pointer;
+}
+
 .exit-large-player {
   color: white;
   position: absolute;

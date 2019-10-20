@@ -62,7 +62,7 @@ class VideoPlayerLarge extends React.Component {
       <div className="videoPlayerLarge">
       <div className="large-player">
         <i onClick={() => {this.props.toggleLargeVideo()}} className="exit-large-player fas fa-times"></i>
-        <video autoPlay onEnded={() => {this.setState({playing: false, paused: true})}} onTimeUpdate={() => {this.setState({currentTime: document.getElementById('videoToPlay').currentTime})}} id="videoToPlay" key={this.props.selectedIdx}>
+        <video onClick={() => {this.playPause()}} autoPlay onEnded={() => {this.setState({playing: false, paused: true})}} onTimeUpdate={() => {this.setState({currentTime: document.getElementById('videoToPlay').currentTime})}} id="videoToPlay" key={this.props.selectedIdx}>
           <source src={this.props.selected.video_url} type="video/mp4"></source>
         </video>
         {!this.state.showSidebar && (
@@ -82,7 +82,7 @@ class VideoPlayerLarge extends React.Component {
           <div className="related-videos">
             <div>
               <h2>Related Videos</h2>
-              <p className="small">1 of 20</p>
+              <p className="small">{this.props.selectedIdx + 1} of {this.props.videos.length}</p>
             </div>
           <i onClick={() => {this.toggleSideBar()}} className="toggle-sidebar far fa-arrow-alt-circle-right"></i>
           </div>
