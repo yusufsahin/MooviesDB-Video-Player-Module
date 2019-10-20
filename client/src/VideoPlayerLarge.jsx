@@ -67,7 +67,7 @@ class VideoPlayerLarge extends React.Component {
           <source src={this.props.selected.video_url} type="video/mp4"></source>
         </video>
         {this.state.showNext && (
-          <div onMouseEnter={() => {this.setState({showNext: true})}} onMouseOut={() => {this.setState({showNext: false})}}className="nextVideo" style={!this.state.showSidebar ? {right: '15px'} : {right: '340px'}}>
+          <div onMouseEnter={() => {this.setState({showNext: true})}} onMouseOut={() => {this.setState({showNext: false})}} onClick={() => {this.props.selectedIdx === 26 ? this.props.changeVideo(0): this.props.changeVideo(this.props.selectedIdx + 1)}} className="nextVideo" style={!this.state.showSidebar ? {right: '0px'} : {right: '325px'}}>
             <i className="fas fa-chevron-right"></i>
           </div>
 
