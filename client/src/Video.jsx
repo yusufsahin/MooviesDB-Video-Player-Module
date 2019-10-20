@@ -2,8 +2,10 @@ import React from 'react';
 import "./css/Video.css";
 
 const Video = (props) => (
-  <div onClick={() => {props.changeVideo(props.index)}} style={props.selected ? {backgroundColor: 'rgb(71, 71, 71)'} : {backgroundColor: 'rgb(29, 29, 29)'}} className="video-list-item">
-    {console.log(props.selected)}
+  <div onClick={() => {
+    props.changeVideo(props.index);
+    props.switchVideo();
+    }} style={props.selected ? {backgroundColor: 'rgb(71, 71, 71)'} : {backgroundColor: 'rgb(29, 29, 29)'}} className="video-list-item">
     <div className="video-list-image">
       <img src={props.videoInfo.thumbnail_url} />
     </div>

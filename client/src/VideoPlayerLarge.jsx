@@ -13,6 +13,7 @@ class VideoPlayerLarge extends React.Component {
     }
     this.toggleSideBar = this.toggleSideBar.bind(this);
     this.playPause = this.playPause.bind(this);
+    this.switchVideo = this.switchVideo.bind(this);
   }
 
   toggleSideBar() {
@@ -38,21 +39,22 @@ class VideoPlayerLarge extends React.Component {
     }
   }
 
-  componentDidMount() {
+  switchVideo() {
     const video = document.getElementById('videoToPlay');
+    this.setState({
+      playing: true,
+      paused: false,
+    })
     video.addEventListener('ended', () => {
       this.setState({
         playing: false,
         paused: true
       })
     })
-    video.addEventListener('timeupdate', () => {
-      this.setState({
-        currentTime: video.currentTime
-      })
-    })
-  }
 
+
+
+  }
 
   render() {
 
@@ -60,7 +62,7 @@ class VideoPlayerLarge extends React.Component {
       <div className="videoPlayerLarge">
       <div className="large-player">
         <i onClick={() => {this.props.toggleLargeVideo()}} className="exit-large-player fas fa-times"></i>
-        <video autoPlay id="videoToPlay" key={this.props.selectedIdx}>
+        <video autoPlay onEnded={() => {this.setState({playing: false, paused: true})}} onTimeUpdate={() => {this.setState({currentTime: document.getElementById('videoToPlay').currentTime})}} id="videoToPlay" key={this.props.selectedIdx}>
           <source src={this.props.selected.video_url} type="video/mp4"></source>
         </video>
         {!this.state.showSidebar && (
@@ -98,7 +100,7 @@ class VideoPlayerLarge extends React.Component {
             <p className="description">{this.props.selected.description}</p>
           </div>
       {this.props.videos.map((video, idx) => {
-        return <Video index={idx} changeVideo={this.props.changeVideo} key={video._id} videoInfo={video} selected={idx === this.props.selectedIdx} />})}
+        return <Video switchVideo={this.switchVideo} index={idx} changeVideo={this.props.changeVideo} key={idx} videoInfo={video} selected={idx === this.props.selectedIdx} />})}
         </div>
       )}
     </div>
