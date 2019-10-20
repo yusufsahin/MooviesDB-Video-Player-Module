@@ -9,7 +9,8 @@ class VideoPlayerLarge extends React.Component {
       showSidebar: true,
       playing: true,
       paused: false,
-      currentTime: 0
+      currentTime: 0,
+      showNext: false
     }
     this.toggleSideBar = this.toggleSideBar.bind(this);
     this.playPause = this.playPause.bind(this);
@@ -62,9 +63,15 @@ class VideoPlayerLarge extends React.Component {
       <div className="videoPlayerLarge">
       <div className="large-player">
         <i onClick={() => {this.props.toggleLargeVideo()}} className="exit-large-player fas fa-times"></i>
-        <video onClick={() => {this.playPause()}} autoPlay onEnded={() => {this.setState({playing: false, paused: true})}} onTimeUpdate={() => {this.setState({currentTime: document.getElementById('videoToPlay').currentTime})}} id="videoToPlay" key={this.props.selectedIdx}>
+        <video onMouseOver={() => {this.setState({showNext: true})}} onMouseOut={() => {this.setState({showNext: false})}} onClick={() => {this.playPause()}} autoPlay onEnded={() => {this.setState({playing: false, paused: true})}} onTimeUpdate={() => {this.setState({currentTime: document.getElementById('videoToPlay').currentTime})}} id="videoToPlay" key={this.props.selectedIdx}>
           <source src={this.props.selected.video_url} type="video/mp4"></source>
         </video>
+        {this.state.showNext && (
+          <div onMouseEnter={() => {this.setState({showNext: true})}} onMouseOut={() => {this.setState({showNext: false})}}className="nextVideo" style={!this.state.showSidebar ? {right: '15px'} : {right: '340px'}}>
+            <i className="fas fa-chevron-right"></i>
+          </div>
+
+          )}
         {!this.state.showSidebar && (
           <i onClick={() => {this.toggleSideBar()}} className="show-sidebar fas fa-info-circle"></i>
         )}

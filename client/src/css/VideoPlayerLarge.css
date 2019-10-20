@@ -170,3 +170,17 @@ html, body {
 .description-box .description {
   color: rgb(139, 139, 139);
 }
+
+.nextVideo {
+  color: white;
+  z-index: 12;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0,0,0,0.4);
+  padding: 15px;
+}
+
+.nextVideo:hover {
+  cursor: pointer;
+}
