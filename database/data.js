@@ -7,7 +7,7 @@ const sampleData = [
     ratings: 221062,
     averageRating: 8.1,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/721370069_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/CowsGrazingInField.jpg",
     video_url: "https://pixabay.com/videos/download/video-15508_large.mp4"
   },
   {
@@ -18,7 +18,7 @@ const sampleData = [
     ratings: 5004,
     averageRating: 7.6,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/582432452_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/BlackWhiteCow.jpg",
     video_url: "https://pixabay.com/videos/download/video-3864_large.mp4"
   },
   {
@@ -29,7 +29,7 @@ const sampleData = [
     ratings: 243,
     averageRating: 8.2,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/641873083_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/RedHairedCow.jpg",
     video_url: "https://pixabay.com/videos/download/video-10270_large.mp4"
   },
   {
@@ -40,7 +40,7 @@ const sampleData = [
     ratings: 2243,
     averageRating: 7.9,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/624639439_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/CowCountryside.jpg",
     video_url: "https://pixabay.com/videos/download/video-8439_large.mp4"
   },
   {
@@ -51,7 +51,7 @@ const sampleData = [
     ratings: 2243,
     averageRating: 6.8,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/543131529_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/TwoCows.jpg",
     video_url: "https://pixabay.com/videos/download/video-1278_medium.mp4"
   },
   {
@@ -62,7 +62,7 @@ const sampleData = [
     ratings: 2843,
     averageRating: 4.5,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/721370017_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/BoiCow.jpg",
     video_url: "https://pixabay.com/videos/download/video-17880_large.mp4"
   },
   {
@@ -73,7 +73,7 @@ const sampleData = [
     ratings: 555553,
     averageRating: 9.1,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/539965155_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/GreenPasture.jpg",
     video_url: "https://pixabay.com/videos/download/video-1026_medium.mp4"
   },
   {
@@ -84,7 +84,7 @@ const sampleData = [
     ratings: 5553,
     averageRating: 6.9,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/721369996_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/CowGrub.jpg",
     video_url: "https://pixabay.com/videos/download/video-17876_large.mp4"
   },
   {
@@ -95,7 +95,7 @@ const sampleData = [
     ratings: 253,
     averageRating: 6.7,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/721370005_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/WhiteFangCow.jpg",
     video_url: "https://pixabay.com/videos/download/video-17877_large.mp4"
   },
   {
@@ -106,7 +106,7 @@ const sampleData = [
     ratings: 53,
     averageRating: 5.1,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/805006001_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/InvisibleCow.jpg",
     video_url: "https://pixabay.com/videos/download/video-25876_medium.mp4"
   },
   {
@@ -117,7 +117,7 @@ const sampleData = [
     ratings: 557,
     averageRating: 4.6,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/721370069_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/AfternoonDelight.jpg",
     video_url: "https://pixabay.com/videos/download/video-17899_large.mp4"
   },
   {
@@ -128,7 +128,7 @@ const sampleData = [
     ratings: 5357,
     averageRating: 6.8,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/803790397_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/BlueSky.jpg",
     video_url: "https://pixabay.com/videos/download/video-25735_large.mp4"
   },
   {
@@ -139,7 +139,7 @@ const sampleData = [
     ratings: 507,
     averageRating: 8.4,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/591844681_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/RabbitCow.jpg",
     video_url: "https://pixabay.com/videos/download/video-5273_large.mp4"
   },
   {
@@ -150,7 +150,7 @@ const sampleData = [
     ratings: 5075,
     averageRating: 7.3,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/711965991_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/ForrestCow.jpg",
     video_url: "https://pixabay.com/videos/download/video-17121_large.mp4"
   },
   {
@@ -161,7 +161,7 @@ const sampleData = [
     ratings: 175,
     averageRating: 8.7,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/721370056_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/TheDog.jpg",
     video_url: "https://pixabay.com/videos/download/video-17901_large.mp4"
   },
   {
@@ -172,7 +172,7 @@ const sampleData = [
     ratings: 1754,
     averageRating: 6.7,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/530112812_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/BlackCowllion.jpg",
     video_url: "https://pixabay.com/videos/download/video-190_large.mp4"
   },
   {
@@ -183,7 +183,7 @@ const sampleData = [
     ratings: 1798,
     averageRating: 7.7,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/558899029_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/TheHerd.jpg",
     video_url: "https://pixabay.com/videos/download/video-2359_medium.mp4"
   },
   {
@@ -194,7 +194,7 @@ const sampleData = [
     ratings: 118,
     averageRating: 7.0,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/638620827_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/HolyCow.jpg",
     video_url: "https://pixabay.com/videos/download/video-9626_large.mp4"
   },
   {
@@ -205,7 +205,7 @@ const sampleData = [
     ratings: 118,
     averageRating: 6.4,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/641873066_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/EveryRoseHorns.jpg",
     video_url: "https://pixabay.com/videos/download/video-10267_large.mp4"
   },
   {
@@ -216,7 +216,7 @@ const sampleData = [
     ratings: 6018,
     averageRating: 7.2,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/594643756_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/Livestock.jpg",
     video_url: "https://pixabay.com/videos/download/video-5694_large.mp4"
   },
   {
@@ -227,7 +227,7 @@ const sampleData = [
     ratings: 68,
     averageRating: 8.9,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/671435135_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/GreatDivide.jpg",
     video_url: "https://pixabay.com/videos/download/video-13229_large.mp4"
   },
   {
@@ -238,7 +238,7 @@ const sampleData = [
     ratings: 68,
     averageRating: 6.0,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/604428940_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/Browny.jpg",
     video_url: "https://pixabay.com/videos/download/video-6536_large.mp4"
   },
   {
@@ -249,7 +249,7 @@ const sampleData = [
     ratings: 408,
     averageRating: 9.4,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/593237675_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/CowFather.jpg",
     video_url: "https://pixabay.com/videos/download/video-5646_large.mp4"
   },
   {
@@ -260,7 +260,7 @@ const sampleData = [
     ratings: 9408,
     averageRating: 7.2,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/817383183_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/TrueLove.jpg",
     video_url: "https://pixabay.com/videos/download/video-27236_medium.mp4"
   },
   {
@@ -271,7 +271,7 @@ const sampleData = [
     ratings: 4038,
     averageRating: 6.5,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/817716411_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/ARealMate.jpg",
     video_url: "https://pixabay.com/videos/download/video-27259_medium.mp4"
   },
   {
@@ -282,7 +282,7 @@ const sampleData = [
     ratings: 4038,
     averageRating: 4.8,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/779273092_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/CowBunch.jpg",
     video_url: "https://pixabay.com/videos/download/video-23123_large.mp4"
   },
   {
@@ -293,7 +293,7 @@ const sampleData = [
     ratings: 4138,
     averageRating: 5.6,
     yourRating: [],
-    thumbnail_url: "https://i.vimeocdn.com/video/646283246_640x360.jpg",
+    thumbnail_url: "https://cowthumbnailphotos.s3-us-west-1.amazonaws.com/FEC+thumbnail+photos/SunsetCow.jpg",
     video_url: "https://pixabay.com/videos/download/video-10737_large.mp4"
   }
 ]
