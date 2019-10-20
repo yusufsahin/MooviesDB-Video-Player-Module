@@ -61,6 +61,12 @@ class VideoPlayerLarge extends React.Component {
 
     return (
       <div className="videoPlayerLarge">
+        {!this.state.showSidebar && (
+          <div className="top-header">
+            <p>{this.props.selected.title} ({this.props.selected.date})</p>
+            <p>{this.props.selectedIdx + 1} of {this.props.videos.length}</p>
+          </div>
+        )}
       <div className="large-player">
         <i onClick={() => {this.props.toggleLargeVideo()}} className="exit-large-player fas fa-times"></i>
         <video onMouseOver={() => {this.setState({showNext: true})}} onMouseOut={() => {this.setState({showNext: false})}} onClick={() => {this.playPause()}} autoPlay onEnded={() => {this.setState({playing: false, paused: true})}} onTimeUpdate={() => {this.setState({currentTime: document.getElementById('videoToPlay').currentTime})}} id="videoToPlay" key={this.props.selectedIdx}>

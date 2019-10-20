@@ -73,6 +73,7 @@ html, body {
   top: 15px;
   right: 15px;
   font-size: 20px;
+  z-index: 12;
 }
 
 .show-sidebar:hover {
@@ -183,4 +184,20 @@ html, body {
 
 .nextVideo:hover {
   cursor: pointer;
+}
+
+.top-header {
+  position: absolute;
+  top: 10px;
+  display: inline-block;
+  z-index: 11;
+  color: white;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.top-header p {
+  margin: 5px 0px;
 }
