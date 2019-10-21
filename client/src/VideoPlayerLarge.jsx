@@ -52,13 +52,9 @@ class VideoPlayerLarge extends React.Component {
         paused: true
       })
     })
-
-
-
   }
 
   render() {
-
     return (
       <div className="videoPlayerLarge">
         {!this.state.showSidebar && (
