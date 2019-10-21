@@ -32,6 +32,31 @@ describe('Communicate with server', () => {
       .expect(res => res.body.length > 0)
       .end(done)
   })
+
+  it('Should return an array with a length of 27', (done) => {
+    request.get('/api/videoplayer/data')
+      .expect(200)
+      .expect(res => res.body.length === 27)
+      .end(done)
+  })
+  it('Entries should have the correct propererties', (done) => {
+    request.get('/api/videoplayer/data')
+      .expect(200)
+      .expect((res) => {
+        expect(res.body[0]).toHaveProperty('_id')
+        expect(res.body[0]).toHaveProperty('title')
+        expect(res.body[0]).toHaveProperty('description')
+        expect(res.body[0]).toHaveProperty('running_time')
+        expect(res.body[0]).toHaveProperty('date')
+        expect(res.body[0]).toHaveProperty('ratings')
+        expect(res.body[0]).toHaveProperty('averageRating')
+        expect(res.body[0]).toHaveProperty('yourRating')
+        expect(res.body[0]).toHaveProperty('thumbnail_url')
+        expect(res.body[0]).toHaveProperty('video_url')
+      })
+      .end(done)
+  })
+
   it('Should fetch a movie based on id', (done) => {
     request.get('/api/videoplayer/data')
     .expect(200)
