@@ -28,6 +28,7 @@ describe('Communicate with server', () => {
         })
   it('Should return an array of length greater than 0', (done) => {
     request.get('/api/videoplayer/data')
+      .expect(200)
       .expect(res => res.body.length > 0)
       .end(done)
   })

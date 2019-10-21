@@ -1,0 +1,28 @@
+.video-list-image img {
+  width: 100px;
+  height: 60px;
+}
+
+.video-list-item {
+  display: flex;
+  color: white;
+  font-size: 12px;
+  padding: 10px 15px;
+}
+
+.video-list-item:hover {
+  cursor: pointer;
+}
+
+.video-list-item-text {
+  padding-left: 15px;
+}
+
+.video-list-item-text p {
+  margin: 0;
+  padding: 2px 0px;
+}
+
+.video-list-item-text .time {
+  color: rgb(139, 139, 139);
+}

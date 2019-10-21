@@ -1,5 +1,5 @@
 import React from 'react';
-import "./stars.css";
+import "./css/stars.css";
 import Star from "./star.jsx"
 
 class Stars extends React.Component {
@@ -11,7 +11,7 @@ class Stars extends React.Component {
       stars: [],
       starHover: false,
       currentRating: '',
-      rated: false,
+      rated: false
     }
     this.changeStars = this.changeStars.bind(this);
     this.starHoverOn = this.starHoverOn.bind(this);

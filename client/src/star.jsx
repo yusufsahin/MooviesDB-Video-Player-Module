@@ -1,5 +1,5 @@
 import React from 'react';
-import "./stars.css";
+import "./css/stars.css";
 
 const Star = (props) => (
   <a className="star-rating-a" onClick={() => {props.addRating()}} onMouseEnter={() => {

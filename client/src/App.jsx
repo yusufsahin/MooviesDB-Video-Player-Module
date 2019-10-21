@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./css/App.css";
 import Stars from "./stars.jsx"
+import VideoPlayerLarge from "./VideoPlayerLarge.jsx"
 
 class App extends Component {
   constructor(props) {
@@ -10,10 +11,13 @@ class App extends Component {
       selected: '',
       showStars: false,
       showLarge: false,
-      rated: false
+      rated: false,
+      selectedIdx: ''
     }
     this.toggleStars = this.toggleStars.bind(this);
     this.handleRating = this.handleRating.bind(this);
+    this.toggleLargeVideo = this.toggleLargeVideo.bind(this);
+    this.changeVideo = this.changeVideo.bind(this);
   }
 
   toggleStars() {
@@ -27,21 +31,38 @@ class App extends Component {
       .then(response => response.json())
       .then(jsonResponse => this.setState({
         videos: jsonResponse,
-        selected: jsonResponse[2]
+        selected: jsonResponse[0],
+        selectedIdx: 0
       }));
   }
 
   handleRating(newState, rating) {
     this.setState({
       videos: newState,
-      selected: newState[2],
+      selected: this.state.selected,
       rated: rating
+    })
+  }
+
+  toggleLargeVideo() {
+    this.setState({
+      showLarge: !this.state.showLarge
+    })
+  }
+
+  changeVideo(idx) {
+    this.setState({
+      selected: this.state.videos[idx],
+      selectedIdx: idx
     })
   }
 
   render() {
     return (
       <div className="App">
+        {this.state.showLarge && (
+          <VideoPlayerLarge selectedIdx={this.state.selectedIdx} changeVideo={this.changeVideo} toggleLargeVideo={this.toggleLargeVideo} selected={this.state.selected} videos={this.state.videos} />
+        )}
         <div className="nav">
           <div className="logo">
             <h1>mooviesDB</h1>
@@ -83,7 +104,7 @@ class App extends Component {
           <video key={this.state.selected.video_url}>
             <source src={this.state.selected.video_url} type="video/mp4"/>
           </video>
-          <i className=" playButton far fa-play-circle"></i>
+          <i onClick={() => {this.toggleLargeVideo()}}className=" playButton far fa-play-circle"></i>
           <div className="video-footer">
             <div>
               <span className="video-footer-running-time">0:{Number(this.state.selected.running_time) < 10 ? '0' + this.state.selected.running_time : this.state.selected.running_time}</span>
