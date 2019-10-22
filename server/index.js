@@ -47,7 +47,7 @@ app.get('/api/videoplayer/data/:id/:rating', (req, res) => {
   })
 })
 
-// app.listen(port, () => {console.log(`listening on port ${port}`)})
+app.listen(port, () => {console.log(`listening on port ${port}`)})
 
 //For testing
 let server;
