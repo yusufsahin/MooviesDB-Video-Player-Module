@@ -1,3 +1,5 @@
 module.exports = {
-  testEnvironment: 'node'
-};
+  "jest": {
+    "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"]
+  }
+}
