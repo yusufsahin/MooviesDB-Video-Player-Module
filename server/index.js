@@ -1,14 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('../database/queries.js');
+const cors = require('cors');
 const app = express();
 const port = 3000;
 
-app.set('trust proxy')
+app.set('trust proxy');
+app.use(cors());
 app.use(express.static(__dirname + '/../client/dist'));
-
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(bodyParser.json());
 
 app.get('/api/videoplayer/data', (req, res) => {
@@ -18,7 +18,7 @@ app.get('/api/videoplayer/data', (req, res) => {
     } else {
       res.status(200).send(docs);
     }
-  })
+  });
 })
 
 app.get('/api/videoplayer/data/:id', (req, res) => {
@@ -47,7 +47,7 @@ app.get('/api/videoplayer/data/:id/:rating', (req, res) => {
   })
 })
 
-// app.listen(port, () => {console.log(`listening on port ${port}`)})
+app.listen(port, () => {console.log(`listening on port ${port}`)})
 
 //For testing
 let server;
