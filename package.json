@@ -14,19 +14,22 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
+    "babel-register": "^6.26.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "faker": "^4.1.0",
     "mongodb": "^3.3.2",
     "mongoose": "^5.7.4",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
     "babel-core": "^6.26.3",
-    "babel-jest": "^24.9.0",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-preset-env": "^1.7.0",
