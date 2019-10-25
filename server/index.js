@@ -10,6 +10,7 @@ app.use(cors());
 app.use(express.static(__dirname + '/../client/dist'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use('/:id', express.static(__dirname + '/../client/dist'));
 
 app.get('/api/videoplayer/data', (req, res) => {
   db.get((err, docs) => {
@@ -26,6 +27,7 @@ app.get('/api/videoplayer/data/:id', (req, res) => {
     if (err) {
       res.sendStatus(404);
     } else {
+      console.log(doc)
       res.send(doc);
     }
   })

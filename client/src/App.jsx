@@ -27,13 +27,19 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/api/videoplayer/data')
+    let id = (Number(window.location.href.slice(22,25)) >= 100) && (Number(window.location.href.slice(22,25)) <= 199) ? window.location.href.slice(22,25) : '100';
+    console.log(window.location.href.slice(22,25));
+    fetch(`http://localhost:3000/api/videoplayer/data/${id}`)
       .then(response => response.json())
-      .then(jsonResponse => this.setState({
-        videos: jsonResponse,
-        selected: jsonResponse[0],
-        selectedIdx: 0
-      }));
+      .then((jsonResponse1) => {
+        fetch('http://localhost:3000/api/videoplayer/data')
+        .then(response => response.json())
+        .then(jsonResponse => this.setState({
+          videos: jsonResponse1.concat(jsonResponse.slice(1)),
+          selected: jsonResponse1[0],
+          selectedIdx: 0
+        }));
+      });
   }
 
   handleRating(newState, rating) {
