@@ -23,7 +23,7 @@
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
-- Node 6.13.0
+- Node >= 6.13.0
 - etc
 
 ## Development
@@ -35,5 +35,7 @@ From within the root directory:
 ```sh
 npm install -g webpack
 npm install
+npm run build
+npm start
 ```
 

@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import "./css/App.css";
 import Stars from "./stars.jsx"
-import VideoPlayerLarge from "./VideoPlayerLarge.jsx"
+import VideoPlayerLarge from "./VideoPlayerLarge.jsx";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar as farStar} from '@fortawesome/free-regular-svg-icons';
+import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
+
+
 
 class App extends Component {
   constructor(props) {
@@ -63,6 +68,24 @@ class App extends Component {
   }
 
   render() {
+
+    const fontAwesomeFarStar = {
+      position: "relative",
+      top: "7px",
+      display: "inline",
+      fontSize: "28px",
+      color: "rgb(133, 133, 133)"
+    }
+
+    const fontAwesomeFasStar = {
+      position: "relative",
+      top: "-3px",
+      color: "rgb(232, 183, 6)",
+      display: "inline",
+      fontSize: "28px"
+    }
+
+
     return (
       <div className="App">
         {this.state.showLarge && (
@@ -81,14 +104,14 @@ class App extends Component {
             <span className="year grey">({this.state.selected.date})</span>
             <div className="ratings-container">
               <div className="ratings-container-left">
-                <i className="fas fa-star"></i>
+                <FontAwesomeIcon style={fontAwesomeFasStar} icon={fasStar}/>
                 <div className="rcl2">
                   <h2 className="average white">{this.state.selected.averageRating}<span className="outOf grey small">/10</span></h2>
                   <p className="totalRatings small grey">{this.state.selected.ratings}</p>
                 </div>
               </div>
               <div onClick={this.toggleStars} className="ratings-container-right">
-                <i className="far fa-star"></i>
+                <FontAwesomeIcon style={fontAwesomeFarStar} icon={farStar}/>
                 <p className="rateThis white small">Rate This</p>
               </div>
               {this.state.showStars && <Stars handleRating={this.handleRating} moovie={this.state.selected} toggleStars={this.toggleStars}/>}

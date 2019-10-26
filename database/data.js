@@ -300,11 +300,17 @@ const data = [
     video_url: "https://pixabay.com/videos/download/video-10737_large.mp4"
   }
 ]
-
+let dataCopy = data.slice();
 var sampleData = [];
 for (let i = 100; i < 200; i++) {
-  let movie = data[Math.floor(Math.random() * data.length)]
+  if (!dataCopy.length) {
+    dataCopy = data.slice();
+  }
+  let randomIdx = Math.floor(Math.random() * dataCopy.length)
+  let movie = dataCopy[randomIdx];
   sampleData.push({id: i, title: faker.lorem.words(), description: faker.lorem.sentence(), running_time: movie.running_time, date: movie.date, ratings: faker.random.number(),averageRating: Math.round(Math.random() * 100)/10, yourRating: [], thumbnail_url: movie.thumbnail_url, video_url: movie.video_url});
+
+  dataCopy.splice(randomIdx, 1)
 }
 
 module.exports.sampleData = sampleData;
