@@ -7,10 +7,13 @@ const port = 3000;
 
 app.set('trust proxy');
 app.use(cors());
-app.use(express.static(__dirname + '/../client/dist'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use('/:id', express.static(__dirname + '/../client/dist'));
+
+app.use(express.static(__dirname + '/../client/dist'));
+// app.use('/:id', express.static(__dirname + '/../client/dist'));
+
+
 
 app.get('/api/videoplayer/data', (req, res) => {
   db.get((err, docs) => {

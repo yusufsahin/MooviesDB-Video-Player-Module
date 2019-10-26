@@ -27,8 +27,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let id = (Number(window.location.href.slice(22,25)) >= 100) && (Number(window.location.href.slice(22,25)) <= 199) ? window.location.href.slice(22,25) : '100';
-    console.log(window.location.href.slice(22,25));
+    let id = (Number(window.location.href.slice(23)) >= 100) && (Number(window.location.href.slice(23)) <= 199) ? window.location.href.slice(23) : '100';
     fetch(`http://localhost:3000/api/videoplayer/data/${id}`)
       .then(response => response.json())
       .then((jsonResponse1) => {
