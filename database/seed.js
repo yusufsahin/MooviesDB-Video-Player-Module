@@ -9,6 +9,7 @@ mongoose.connect('mongodb://localhost/moovies');
 
 
 const mooviesSchema = mongoose.Schema({
+  id: Number,
   title: String,
   trailer_title: String,
   description: String,
@@ -26,6 +27,7 @@ const Moovie = mongoose.model('Moovie', mooviesSchema);
 const seed = function(arr, callback) {
   let data = arr.map(function(item) {
     return new Moovie({
+      id: item.id,
       title: item.title,
       description: item.description,
       running_time: item.running_time,

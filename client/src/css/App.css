@@ -45,7 +45,7 @@
 .header-top-line {
   margin: 0;
   font-weight: normal;
-  font-size: 36px;
+  font-size: 28px;
   padding: 15px 0px 0px 0px;
   position: relative;
 }
@@ -117,6 +117,7 @@
 
 .ratings-container-left {
   border-right: 1px solid rgb(192, 192, 192);
+  top: 6px;
   padding-right: 10px;
   position: relative;
   display: inline-block;
@@ -154,7 +155,7 @@
 
 .ratings-container-right i {
   position: relative;
-  top: 1px;
+  top: 7px;
   display: inline;
   font-size: 28px;
   color: rgb(133, 133, 133);
@@ -162,7 +163,7 @@
 
 .rateThis {
   position: relative;
-  top: 1px;
+  top: 7px;
   max-width: 10px;
   margin: 5px !important;
   margin-right: 20px;

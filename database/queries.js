@@ -6,13 +6,13 @@ const get = (callback) =>  {
     if (err) {
       callback(err);
     } else {
-      callback(null, docs);
+      callback(null, docs.slice(0,20));
     }
   });
 };
 
 const getById = (id, callback) => {
-  moovies.Moovie.find({_id: id}, (err, doc) => {
+  moovies.Moovie.find({id: id}, (err, doc) => {
     if (err) {
       callback(err);
     } else {
