@@ -1,6 +1,9 @@
 import React from 'react';
 import "./css/stars.css";
 import Star from "./star.jsx"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
 
 class Stars extends React.Component {
   constructor(props) {
@@ -62,15 +65,28 @@ class Stars extends React.Component {
   }
 
   render() {
+
+    const fontAwesomeFaTimesCircle = {
+      fontSize: "16px",
+      margin: "1px"
+    }
+
+    const fontAwesomeFasStar = {
+      position: "relative",
+      fontSize: "27px",
+      left: "10px",
+      top: "11px",
+      color: "rgb(100, 141, 237)"
+    }
     return (
       <div onMouseLeave={() => {this.props.toggleStars()}} className="stars">
-        <div className="star-exit-container">
-          <i onClick={() => {this.props.toggleStars()}} className="star-exit fas fa-times-circle"></i>
+        <div onClick={() => {this.props.toggleStars()}}  className="star-exit-container">
+          <FontAwesomeIcon icon={faTimesCircle} style={fontAwesomeFaTimesCircle} />
         </div>
           {this.state.stars.map(item => <Star addRating={this.addRating} starHoverOn={this.starHoverOn} starHoverOff={this.starHoverOff} style={item <= this.state.currentRating ? "selected" : ""} changeStars={this.changeStars} key={item} index={item} />)}
           {(this.state.rated || this.state.starHover) && (
             <div className="display-rating">
-              <i className="fas fa-star"></i>
+              <FontAwesomeIcon icon={fasStar} style={fontAwesomeFasStar} />
               <span className="current-rating-display">{this.state.rated || this.state.currentRating}</span>
               <span className="small you">You</span>
             </div>)

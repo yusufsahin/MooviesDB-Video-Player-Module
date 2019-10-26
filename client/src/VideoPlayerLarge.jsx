@@ -1,6 +1,9 @@
 import React from 'react';
 import "./css/VideoPlayerLarge.css";
 import Video from "./Video.jsx";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes, faChevronRight, faInfoCircle, faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleRight } from '@fortawesome/free-regular-svg-icons';
 
 class VideoPlayerLarge extends React.Component {
   constructor(props) {
@@ -55,6 +58,24 @@ class VideoPlayerLarge extends React.Component {
   }
 
   render() {
+
+    const fontAwesomeFaTimes = {
+      color: "white",
+      position: "absolute",
+      top: "15px",
+      left: "15px",
+      fontSize: "20px",
+      zIndex: 20
+    }
+
+    const fontAwesomeFaInfoCircle = {
+      color: "white",
+      position: "absolute",
+      top: "15px",
+      right: "15px",
+      fontSize: "20px",
+      zIndex: 12
+    }
     return (
       <div className="videoPlayerLarge">
         {!this.state.showSidebar && (
@@ -64,24 +85,26 @@ class VideoPlayerLarge extends React.Component {
           </div>
         )}
       <div className="large-player">
-        <i onClick={() => {this.props.toggleLargeVideo()}} className="exit-large-player fas fa-times"></i>
+        <FontAwesomeIcon className="exit-large-player" onClick={() => {this.props.toggleLargeVideo()}} icon={faTimes} style={fontAwesomeFaTimes}/>
         <video onMouseOver={() => {this.setState({showNext: true})}} onMouseOut={() => {this.setState({showNext: false})}} onClick={() => {this.playPause()}} autoPlay onEnded={() => {this.setState({playing: false, paused: true})}} onTimeUpdate={() => {this.setState({currentTime: document.getElementById('videoToPlay').currentTime})}} id="videoToPlay" key={this.props.selectedIdx}>
           <source src={this.props.selected.video_url} type="video/mp4"></source>
         </video>
         {this.state.showNext && (
           <div onMouseEnter={() => {this.setState({showNext: true})}} onMouseOut={() => {this.setState({showNext: false})}} onClick={() => {this.props.selectedIdx === 26 ? this.props.changeVideo(0): this.props.changeVideo(this.props.selectedIdx + 1)}} className="nextVideo" style={!this.state.showSidebar ? {right: '0px'} : {right: '325px'}}>
-            <i className="fas fa-chevron-right"></i>
+            <FontAwesomeIcon icon={faChevronRight} />
           </div>
 
           )}
-        {!this.state.showSidebar && (
-          <i onClick={() => {this.toggleSideBar()}} className="show-sidebar fas fa-info-circle"></i>
-        )}
+          <div>
+            {!this.state.showSidebar && (
+              <FontAwesomeIcon className="show-sidebar" onClick={() => {this.toggleSideBar()}} style={fontAwesomeFaInfoCircle} icon={faInfoCircle}/>
+            )}
+          </div>
         <div onClick={this.playPause} className="play-pause">
           {this.state.playing ? (
-            <i className="fas fa-pause"></i>
+            <FontAwesomeIcon className="pause" icon={faPause} />
           ) : (
-            <i className="fas fa-play"></i>
+            <FontAwesomeIcon icon={faPlay} />
           )}
           <p>00:{Math.round(this.state.currentTime) < 10 ? '0' + Math.round(this.state.currentTime) : Math.round(this.state.currentTime)}/ 00:{this.props.selected.running_time < 10 ? '0' + this.props.selected.running_time : this.props.selected.running_time }</p>
         </div>
@@ -93,7 +116,7 @@ class VideoPlayerLarge extends React.Component {
               <h2>Related Videos</h2>
               <p className="small">{this.props.selectedIdx + 1} of {this.props.videos.length}</p>
             </div>
-          <i onClick={() => {this.toggleSideBar()}} className="toggle-sidebar far fa-arrow-alt-circle-right"></i>
+            <FontAwesomeIcon onClick={() => {this.toggleSideBar()}} icon={faArrowAltCircleRight} className="toggle-sidebar" />
           </div>
           <div className="now-playing">
             <div>

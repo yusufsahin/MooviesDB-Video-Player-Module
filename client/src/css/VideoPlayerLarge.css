@@ -151,7 +151,7 @@ html, body {
   color: white;
 }
 
-.play-pause i:hover {
+.play-pause:hover {
   cursor: pointer;
   color: white;
 }

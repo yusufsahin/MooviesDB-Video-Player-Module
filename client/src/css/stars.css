@@ -34,9 +34,10 @@
   border-right: 1px solid rgb(192, 192, 192);
   padding-right: 10px;
   margin-right: 10px;
+  color: rgb(192, 192, 192);
 }
 
-.star-exit:hover {
+.star-exit-container:hover {
   color: crimson;
   cursor: pointer;
 }

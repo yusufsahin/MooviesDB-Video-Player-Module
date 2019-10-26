@@ -5,6 +5,8 @@ import VideoPlayerLarge from "./VideoPlayerLarge.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as farStar} from '@fortawesome/free-regular-svg-icons';
 import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons';
+import { faPlayCircle } from '@fortawesome/free-regular-svg-icons';
 
 
 
@@ -65,6 +67,7 @@ class App extends Component {
       selected: this.state.videos[idx],
       selectedIdx: idx
     })
+
   }
 
   render() {
@@ -85,6 +88,23 @@ class App extends Component {
       fontSize: "28px"
     }
 
+    const fontAwesomeFaBookmark = {
+      fontSize: "55px",
+      position: "absolute",
+      top: "15px",
+      left: "20px",
+      zIndex: 1,
+      color: "rgb(119, 119, 119)"
+    }
+
+    const fontAwesomeFaPlayCircle = {
+      position: "absolute",
+      top: "135px",
+      left: "230px",
+      zIndex: 1,
+      fontSize: "55px"
+    }
+
 
     return (
       <div className="App">
@@ -98,7 +118,7 @@ class App extends Component {
         </div>
         <div className="videoPlayerSmall">
           <span className="plus">+</span>
-          <i className="bookmark fas fa-bookmark"></i>
+          <FontAwesomeIcon style={fontAwesomeFaBookmark} icon={faBookmark} />
           <div className="header-top-line">
             <span className="title white">{this.state.selected.title}</span>
             <span className="year grey">({this.state.selected.date})</span>
@@ -128,11 +148,11 @@ class App extends Component {
           <img src={this.state.selected.thumbnail_url}></img>
         </div>
         <p className="photo-thumbnail-title">{this.state.selected.title}</p>
-        <div className="video-thumbnail-main">
+        <div onClick={() => {this.toggleLargeVideo()}} className="video-thumbnail-main">
           <video key={this.state.selected.video_url}>
             <source src={this.state.selected.video_url} type="video/mp4"/>
           </video>
-          <i onClick={() => {this.toggleLargeVideo()}}className=" playButton far fa-play-circle"></i>
+          <FontAwesomeIcon onClick={() => {this.toggleLargeVideo()}} style={fontAwesomeFaPlayCircle} icon={faPlayCircle} />
           <div className="video-footer">
             <div>
               <span className="video-footer-running-time">0:{Number(this.state.selected.running_time) < 10 ? '0' + this.state.selected.running_time : this.state.selected.running_time}</span>
